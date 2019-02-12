@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import './table.component.scss';
 
 export default class TableCompinent extends Component {
+  
   render() {
     const { persons } = this.props;
-
     return (
       <table className="table">
         <thead>
@@ -22,12 +22,12 @@ export default class TableCompinent extends Component {
           {
             persons.map(item => {
               return (
-                <tr key={item.id}>
-                  <td width="20">{item.id}</td>
+                <tr key={item.email}>
+                  <td width="20">{item.id.value}</td>
                   <td width="100">
-                    <img src={item.image} alt="{item.name}" width="50" />
+                    <img src={item.picture.thumbnail} alt="{item.name}" width="50" />
                   </td>
-                  <td>{item.name}</td>
+                  <td>{item.name.title + ' ' + item.name.first + ' ' + item.name.last}</td>
                   <td>{item.email}</td>
                   <td>{item.phone}</td>
                 </tr>

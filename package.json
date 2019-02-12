@@ -2,14 +2,16 @@
   "name": "react-todo",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://prosenjit-itobuz.github.io/react-todo",
+  "homepage": "https://prosenjit-itobuz.github.io/react-todo",
   "dependencies": {
+    "axios": "^0.18.0",
+    "deploy": "netlify deploy --prod --dir=build",
     "faker": "^4.1.0",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-scripts": "2.1.4",
-    "deploy": "netlify deploy --prod --dir=build"
+    "react-scripts": "2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
