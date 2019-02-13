@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { SearchComponent } from './shared/components/search/search.component';
 import TableCompinent from './shared/components/table/table.component';
+import { AppLoaderComponent } from './shared/components/loader-app/loader.component';
 
 import './App.scss';
 
@@ -12,7 +13,8 @@ class App extends Component {
 
   state = {
     searchkey: '',
-    persons: [].concat(this.mockpersons)
+    persons: [].concat(this.mockpersons),
+    loader: true
   }
 
   onChange = (e) => {
@@ -41,6 +43,10 @@ class App extends Component {
         <h1>React Contact book</h1>
         <SearchComponent onChange={this.onChange} placeholder="Search here" />
         <TableCompinent persons={this.state.persons} />
+        {
+          loader ? <AppLoaderComponent /> : null
+        }
+        
       </div>
     );
   }
@@ -52,7 +58,7 @@ class App extends Component {
         console.log(response)
         this.mockpersons = response.results;
         console.log(this.mockpersons)
-        this.setState({ persons: this.mockpersons })
+        this.setState({ persons: this.mockpersons, loader: false });
       })
       .catch(err => {
         console.log(err);
