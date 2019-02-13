@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    const { loader } = this.state; 
     return (
       <div className="App container">
         <h1>React Contact book</h1>
